@@ -22,45 +22,4 @@
   .font-script {
     font-family: "Pinyon Script", cursive;
   }
-
-  .animate-background-paths {
-    animation: background-paths-drift 18s ease-in-out infinite alternate;
-    will-change: transform, opacity;
-  }
-
-  .animate-background-paths-reverse {
-    animation: background-paths-drift-reverse 22s ease-in-out infinite alternate;
-    will-change: transform, opacity;
-  }
-}
-
-@keyframes background-paths-drift {
-  from {
-    opacity: 0.65;
-    transform: translate3d(-6%, -4%, 0) scale(1.08);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(6%, 4%, 0) scale(1.16);
-  }
-}
-
-@keyframes background-paths-drift-reverse {
-  from {
-    opacity: 0.45;
-    transform: translate3d(5%, 3%, 0) scale(1.12);
-  }
-
-  to {
-    opacity: 0.8;
-    transform: translate3d(-5%, -3%, 0) scale(1.04);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-background-paths,
-  .animate-background-paths-reverse {
-    animation: none;
-  }
 }
