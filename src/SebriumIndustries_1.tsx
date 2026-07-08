@@ -179,19 +179,19 @@ const PROJECTS = [
   },
   {
     id: "03",
-    name: "Ozone Designs",
-    logo: "/project-logos/ozone-designs.svg",
-    href: "https://ozonedesigns.sebrium.com",
-    desc: "Websites for businesses, brands, and creators.",
-    cta: "Visit Agency ↗",
+    name: "Sebrium Web Design",
+    logo: "/SIsebriumindustries.svg",
+    href: "/web-design",
+    desc: "Professional websites, landing pages, and redesigns for businesses.",
+    cta: "View Service ↗",
   },
 ];
 
 const TIMELINE = [
   {
     year: "2025",
-    title: "Started Ozone Designs",
-    desc: "Building websites for businesses and brands.",
+    title: "Started with web design",
+    desc: "Building clean websites for businesses, brands, and creators.",
   },
   {
     year: "2026",
@@ -206,7 +206,53 @@ const TIMELINE = [
   {
     year: "Future",
     title: "Sebrium Software",
-    desc: "More products. More solutions. More impact.",
+    desc: "More products, sharper websites, and useful digital tools.",
+  },
+];
+
+const WEB_DESIGN_SERVICES = [
+  "Business websites and brand sites",
+  "Landing pages for offers, products, and launches",
+  "Website redesigns for outdated or unclear sites",
+  "SEO-ready page structure and metadata",
+  "Responsive builds for mobile, tablet, and desktop",
+  "Launch support, handoff, and simple upkeep",
+];
+
+const WEB_DESIGN_PACKAGES = [
+  {
+    name: "Starter Site",
+    desc: "A clean single-page website for a business, creator, or new offer.",
+    details: ["1 page", "Responsive design", "Contact CTA", "Basic SEO setup"],
+  },
+  {
+    name: "Business Site",
+    desc: "A sharper multi-section site for businesses that need more trust and clarity.",
+    details: ["3-5 sections", "Service copy", "Lead-focused layout", "Launch support"],
+  },
+  {
+    name: "Custom Build",
+    desc: "A more involved website or product-facing page built around your workflow.",
+    details: ["Custom scope", "Advanced layout", "Product-minded structure", "Ongoing support options"],
+  },
+];
+
+const WEB_DESIGN_PROCESS = [
+  {
+    title: "Direction",
+    desc: "We define what the website needs to do, who it is for, and what action visitors should take.",
+  },
+  {
+    title: "Design",
+    desc: "The visual system, layout, and copy are shaped around credibility, clarity, and conversion.",
+  },
+  {
+    title: "Build",
+    desc: "The site is built responsive, fast, SEO-aware, and ready to launch without unnecessary clutter.",
+  },
+  {
+    title: "Launch",
+    desc: "Final polish, deployment support, and handoff so the site is easy to use after it goes live.",
   },
 ];
 
@@ -231,6 +277,7 @@ const SebriumIndustries: React.FC = () => {
 
         <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
           <a href="#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
           <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
           <a href="#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
           <a href="#contact" className="hover:opacity-60 transition-opacity">Contact</a>
@@ -325,17 +372,19 @@ const SebriumIndustries: React.FC = () => {
           Projects
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-7">
+        <div className="grid items-stretch gap-7 md:grid-cols-3">
           {PROJECTS.map((p, i) => (
-            <Reveal key={p.id} delay={i * 120}>
-              <div className="group border border-black bg-white p-8 min-h-[260px] flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
-                <div className="mt-8 flex w-full flex-col items-center">
+            <Reveal key={p.id} delay={i * 120} className="h-full">
+              <div className="group flex h-full min-h-[320px] flex-col items-center justify-between border border-black bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
+                <div className="flex w-full flex-1 flex-col items-center justify-center">
+                  <div className="flex h-16 w-full items-center justify-center">
                   <img
                     src={p.logo}
                     alt={p.name}
-                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[180px] sm:max-w-[220px] md:max-w-[240px] object-contain transition duration-300 group-hover:invert"
+                    className="h-10 w-auto max-w-[180px] object-contain transition duration-300 group-hover:invert sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px]"
                   />
-                  <p className="mt-6 leading-relaxed">{p.desc}</p>
+                  </div>
+                  <p className="mt-7 max-w-[260px] leading-relaxed">{p.desc}</p>
                 </div>
                 <a href={p.href} className="font-accent mt-6 inline-block text-[15px] font-semibold tracking-[0.04em] hover:opacity-70 transition-opacity">
                   {p.cta}
@@ -345,6 +394,46 @@ const SebriumIndustries: React.FC = () => {
           ))}
         </div>
         </div>
+      </section>
+
+      {/* WEB DESIGN TEASER */}
+      <section className="relative z-10 grid gap-12 px-6 py-24 md:grid-cols-[1fr_0.9fr] md:px-12">
+        <Reveal>
+          <h2 className="font-accent text-4xl md:text-6xl font-semibold tracking-[0.04em] mb-8">
+            Web Design
+          </h2>
+          <BlurText
+            as="p"
+            text="Websites for businesses that need to look credible and ship fast."
+            className="text-3xl md:text-6xl font-medium leading-[1.02] tracking-[-0.04em]"
+          />
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed">
+            Sebrium handles website projects, redesigns, and landing pages with a clean visual direction and a product-minded build process.
+          </p>
+          <a
+            href="/web-design"
+            className="font-accent mt-10 inline-block border border-black bg-black px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-white transition-transform hover:-translate-y-1"
+          >
+            View Web Design ↗
+          </a>
+        </Reveal>
+
+        <Reveal delay={150} className="border border-black bg-white p-7 md:p-9">
+          <div className="font-accent mb-7 text-[15px] font-semibold uppercase tracking-[0.12em]">
+            Built For
+          </div>
+          <div className="grid gap-0">
+            {[
+              "Local businesses that need a sharper online presence.",
+              "Founders launching a product, offer, or service.",
+              "Teams replacing an outdated or unclear website.",
+            ].map((item) => (
+              <div key={item} className="border-b border-black py-4 text-lg last:border-b-0">
+                {item}
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* TIMELINE */}
@@ -389,6 +478,7 @@ const SebriumIndustries: React.FC = () => {
       <Footer
         leftLinks={[
           { href: "#projects", label: "Projects" },
+          { href: "/web-design", label: "Web Design" },
           { href: "#about", label: "About" },
           { href: "#timeline", label: "Timeline" },
         ]}
@@ -406,6 +496,176 @@ const SebriumIndustries: React.FC = () => {
           50% { transform: translateY(-18px); }
         }
       `}</style>
+    </div>
+  );
+};
+
+export const WebDesignPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Sebrium Web Design | Websites for Businesses";
+  }, []);
+
+  return (
+    <div className="relative isolate bg-white text-black font-sans antialiased overflow-x-hidden">
+      <BackgroundPaths />
+
+      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
+        <a href="/" className="flex items-center gap-3" aria-label="Back to Sebrium home">
+          <img
+            src="/SIsebriumindustries.svg"
+            alt="Sebrium"
+            className="hidden h-10 w-auto md:block"
+          />
+        </a>
+
+        <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
+          <a href="/#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
+          <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
+          <a href="/#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
+          <a href="/#contact" className="hover:opacity-60 transition-opacity">Contact</a>
+        </div>
+      </nav>
+
+      <main>
+        <section className="relative z-10 grid min-h-[calc(100vh-96px)] gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.1fr_0.9fr] md:px-12 md:pt-24">
+          <Reveal>
+            <a
+              href="/"
+              className="font-accent mb-10 inline-block text-[15px] font-semibold uppercase tracking-[0.12em] hover:opacity-60 md:hidden"
+            >
+              ← Sebrium
+            </a>
+            <div className="font-accent mb-8 text-[15px] font-semibold uppercase tracking-[0.16em]">
+              Web Design Agency
+            </div>
+            <BlurText
+              as="h1"
+              text="Professional websites built with a product mindset."
+              className="text-5xl font-medium leading-[0.96] tracking-[-0.05em] md:text-8xl"
+            />
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
+              Sebrium builds clean, fast, credible websites for businesses that need more than a template. We design around clarity, trust, and getting visitors to take action.
+            </p>
+            <p className="mt-5 max-w-2xl leading-relaxed">
+              Ozone Designs is now part of Sebrium. New website projects, redesigns, and landing pages are handled here with a stronger product-minded process.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-5">
+              <a
+                href="#inquiry"
+                className="font-accent border border-black bg-black px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-white transition-transform hover:-translate-y-1"
+              >
+                Start a Website ↗
+              </a>
+              <a
+                href="#packages"
+                className="font-accent border border-black px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] transition-transform hover:-translate-y-1"
+              >
+                View Options ↗
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} className="grid content-between border border-black bg-white p-7 md:p-9">
+            <div>
+              <div className="font-accent mb-7 text-[15px] font-semibold uppercase tracking-[0.12em]">
+                What We Build
+              </div>
+              <div className="grid gap-0">
+                {WEB_DESIGN_SERVICES.map((service) => (
+                  <div key={service} className="border-b border-black py-4 text-lg last:border-b-0">
+                    {service}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
+        <section id="packages" className="relative z-10 px-6 py-24 md:px-12">
+          <Reveal>
+            <h2 className="font-accent mb-8 text-4xl font-semibold tracking-[0.04em] md:text-6xl">
+              Website Options
+            </h2>
+          </Reveal>
+          <div className="grid gap-7 md:grid-cols-3">
+            {WEB_DESIGN_PACKAGES.map((pack, i) => (
+              <Reveal key={pack.name} delay={i * 120}>
+                <div className="flex min-h-[360px] flex-col justify-between border border-black bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
+                  <div>
+                    <h3 className="text-3xl font-medium tracking-[-0.03em]">{pack.name}</h3>
+                    <p className="mt-5 leading-relaxed">{pack.desc}</p>
+                  </div>
+                  <div className="mt-8">
+                    {pack.details.map((detail) => (
+                      <div key={detail} className="border-t border-current py-3">
+                        {detail}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="relative z-10 grid gap-10 px-6 py-24 md:grid-cols-[0.7fr_1.3fr] md:px-12">
+          <Reveal>
+            <h2 className="font-accent text-4xl font-semibold tracking-[0.04em] md:text-6xl">
+              Process
+            </h2>
+          </Reveal>
+          <div>
+            {WEB_DESIGN_PROCESS.map((item, i) => (
+              <Reveal key={item.title} delay={i * 100}>
+                <div className="border-b border-black py-7">
+                  <h3 className="text-2xl font-medium tracking-[-0.02em]">{item.title}</h3>
+                  <p className="mt-3 max-w-3xl leading-relaxed">{item.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section id="inquiry" className="relative z-10 px-6 py-24 md:px-12">
+          <Reveal delay={150} className="border border-black bg-black p-8 text-white md:p-12">
+            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+              <div>
+                <div className="font-accent mb-6 text-[15px] font-semibold uppercase tracking-[0.16em]">
+                  Start a Website
+                </div>
+                <h2 className="max-w-4xl text-4xl font-medium leading-[1.02] tracking-[-0.04em] md:text-6xl">
+                  Need a cleaner, sharper website for your business?
+                </h2>
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed">
+                  Send a quick note with what you need, what the site is for, and when you want to launch.
+                </p>
+              </div>
+              <a
+                href="mailto:hello@sebrium.com?subject=Website%20Project%20Inquiry"
+                className="font-accent inline-block border border-white px-7 py-4 text-center text-[15px] font-semibold uppercase tracking-[0.08em] transition-transform hover:-translate-y-1"
+              >
+                Email Sebrium ↗
+              </a>
+            </div>
+          </Reveal>
+        </section>
+      </main>
+
+      <Footer
+        leftLinks={[
+          { href: "/#projects", label: "Projects" },
+          { href: "/web-design", label: "Web Design" },
+          { href: "/#about", label: "About" },
+          { href: "/#timeline", label: "Timeline" },
+        ]}
+        rightLinks={[
+          { href: "/#contact", label: "Contact" },
+          { href: "mailto:hello@sebrium.com", label: "Email" },
+        ]}
+        copyrightText="Sebrium 2026. All Rights Reserved"
+        barCount={23}
+      />
     </div>
   );
 };
