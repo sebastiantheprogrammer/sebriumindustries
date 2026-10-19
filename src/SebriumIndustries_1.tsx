@@ -1,4 +1,5 @@
 import ProjectsSection from "./ProjectsSection";
+import BuildTogetherSection from "./BuildTogetherSection";
 import React, { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import BackgroundPaths from "./components/ui/background-paths";
@@ -190,6 +191,9 @@ const WEB_DESIGN_SERVICES = [
   "Landing pages for offers, products, and launches",
   "Website redesigns for outdated or unclear sites",
   "SEO-ready page structure and metadata",
+  "Online stores, payment processing, and subscriptions",
+  "Booking systems, customer portals, and dashboards",
+  "Lead forms, email follow-ups, and analytics",
   "Responsive builds for mobile, tablet, and desktop",
   "Launch support, handoff, and simple upkeep",
 ];
@@ -208,7 +212,7 @@ const WEB_DESIGN_PACKAGES = [
   {
     name: "Custom Build",
     desc: "A more involved website or product-facing page built around your workflow.",
-    details: ["Custom scope", "Advanced layout", "Product-minded structure", "Ongoing support options"],
+    details: ["Custom scope", "Payment or booking integrations", "Portals and business tools", "Ongoing support options"],
   },
 ];
 
@@ -250,8 +254,9 @@ const SebriumIndustries: React.FC = () => {
           />
         </div>
 
-        <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
+        <div className="hidden max-w-2xl flex-wrap justify-end gap-x-6 gap-y-3 font-accent text-[15px] font-semibold tracking-[0.04em] md:flex">
           <a href="#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="#build-together" className="hover:opacity-60 transition-opacity">What We Build</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
           <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
           <a href="#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
@@ -292,10 +297,10 @@ const SebriumIndustries: React.FC = () => {
               Explore Projects ↗
             </a>
             <a
-              href="#contact"
+              href="#build-together"
               className="font-accent px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] border border-black transition-transform hover:-translate-y-1"
             >
-              Contact ↗
+              Build With Us ↗
             </a>
           </Reveal>
         </div>
@@ -326,6 +331,8 @@ const SebriumIndustries: React.FC = () => {
           ))}
         </div>
       </section>
+
+      <BuildTogetherSection />
 
       <ProjectsSection />
 
@@ -411,6 +418,7 @@ const SebriumIndustries: React.FC = () => {
       <Footer
         leftLinks={[
           { href: "#projects", label: "Projects" },
+          { href: "#build-together", label: "What We Build" },
           { href: "/web-design", label: "Web Design" },
           { href: "#about", label: "About" },
           { href: "#timeline", label: "Timeline" },
@@ -451,8 +459,9 @@ export const WebDesignPage: React.FC = () => {
           />
         </a>
 
-        <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
+        <div className="hidden max-w-2xl flex-wrap justify-end gap-x-6 gap-y-3 font-accent text-[15px] font-semibold tracking-[0.04em] md:flex">
           <a href="/#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="#build-together" className="hover:opacity-60 transition-opacity">What We Build</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
           <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
           <a href="/#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
@@ -491,10 +500,10 @@ export const WebDesignPage: React.FC = () => {
                 Start a Website ↗
               </a>
               <a
-                href="#packages"
+                href="#build-together"
                 className="font-accent border border-black px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] transition-transform hover:-translate-y-1"
               >
-                View Options ↗
+                Explore What’s Possible ↗
               </a>
             </div>
           </Reveal>
@@ -514,6 +523,8 @@ export const WebDesignPage: React.FC = () => {
             </div>
           </Reveal>
         </section>
+
+        <BuildTogetherSection />
 
         <section id="packages" className="relative z-10 px-6 py-24 md:px-12">
           <Reveal>
@@ -588,6 +599,7 @@ export const WebDesignPage: React.FC = () => {
       <Footer
         leftLinks={[
           { href: "/#projects", label: "Projects" },
+          { href: "#build-together", label: "What We Build" },
           { href: "/web-design", label: "Web Design" },
           { href: "/#about", label: "About" },
           { href: "/#timeline", label: "Timeline" },
