@@ -1,3 +1,5 @@
+import ProjectsSection from "./ProjectsSection";
+import BuildTogetherSection from "./BuildTogetherSection";
 import React, { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import BackgroundPaths from "./components/ui/background-paths";
@@ -160,32 +162,6 @@ const Logo: React.FC<{ className?: string }> = ({ className = "h-8 w-auto" }) =>
  *  Data
  * ---------------------------------------------------------------------------
  */
-const PROJECTS = [
-  {
-    id: "01",
-    name: "ScheduleSnap",
-    logo: "/project-logos/schedulesnap.svg",
-    href: "https://schedulesnap.sebrium.com",
-    desc: "Turn your school schedule into a clean app.",
-    cta: "View Project ↗",
-  },
-  {
-    id: "02",
-    name: "BellBoard",
-    logo: "/project-logos/bellboard.svg",
-    href: "https://bellboard.sebrium.com",
-    desc: "A school marketplace platform for students.",
-    cta: "View Project ↗",
-  },
-  {
-    id: "03",
-    name: "Sebrium Web Design",
-    logo: "/SIsebriumindustries.svg",
-    href: "/web-design",
-    desc: "Professional websites, landing pages, and redesigns for businesses.",
-    cta: "View Service ↗",
-  },
-];
 
 const TIMELINE = [
   {
@@ -215,6 +191,9 @@ const WEB_DESIGN_SERVICES = [
   "Landing pages for offers, products, and launches",
   "Website redesigns for outdated or unclear sites",
   "SEO-ready page structure and metadata",
+  "Online stores, payment processing, and subscriptions",
+  "Booking systems, customer portals, and dashboards",
+  "Lead forms, email follow-ups, and analytics",
   "Responsive builds for mobile, tablet, and desktop",
   "Launch support, handoff, and simple upkeep",
 ];
@@ -233,7 +212,7 @@ const WEB_DESIGN_PACKAGES = [
   {
     name: "Custom Build",
     desc: "A more involved website or product-facing page built around your workflow.",
-    details: ["Custom scope", "Advanced layout", "Product-minded structure", "Ongoing support options"],
+    details: ["Custom scope", "Payment or booking integrations", "Portals and business tools", "Ongoing support options"],
   },
 ];
 
@@ -275,8 +254,9 @@ const SebriumIndustries: React.FC = () => {
           />
         </div>
 
-        <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
+        <div className="hidden max-w-2xl flex-wrap justify-end gap-x-6 gap-y-3 font-accent text-[15px] font-semibold tracking-[0.04em] md:flex">
           <a href="#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="#build-together" className="hover:opacity-60 transition-opacity">What We Build</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
           <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
           <a href="#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
@@ -317,10 +297,10 @@ const SebriumIndustries: React.FC = () => {
               Explore Projects ↗
             </a>
             <a
-              href="#contact"
+              href="#build-together"
               className="font-accent px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] border border-black transition-transform hover:-translate-y-1"
             >
-              Contact ↗
+              Build With Us ↗
             </a>
           </Reveal>
         </div>
@@ -352,49 +332,9 @@ const SebriumIndustries: React.FC = () => {
         </div>
       </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="relative z-10 overflow-hidden bg-white/90 text-black px-6 md:px-12 py-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-25"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(45deg, rgba(0,0,0,0.04) 1px, transparent 1px)",
-            backgroundSize: "36px 36px",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/0 via-white/70 to-white"
-        />
-        <div className="relative z-10">
-        <h2 className="font-accent text-4xl md:text-6xl font-semibold tracking-[0.04em] mb-12">
-          Projects
-        </h2>
+      <BuildTogetherSection />
 
-        <div className="grid items-stretch gap-7 md:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <Reveal key={p.id} delay={i * 120} className="h-full">
-              <div className="group flex h-full min-h-[320px] flex-col items-center justify-between border border-black bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
-                <div className="flex w-full flex-1 flex-col items-center justify-center">
-                  <div className="flex h-16 w-full items-center justify-center">
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    className="h-10 w-auto max-w-[180px] object-contain transition duration-300 group-hover:invert sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px]"
-                  />
-                  </div>
-                  <p className="mt-7 max-w-[260px] leading-relaxed">{p.desc}</p>
-                </div>
-                <a href={p.href} className="font-accent mt-6 inline-block text-[15px] font-semibold tracking-[0.04em] hover:opacity-70 transition-opacity">
-                  {p.cta}
-                </a>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        </div>
-      </section>
+      <ProjectsSection />
 
       {/* WEB DESIGN TEASER */}
       <section className="relative z-10 grid gap-12 px-6 py-24 md:grid-cols-[1fr_0.9fr] md:px-12">
@@ -478,6 +418,7 @@ const SebriumIndustries: React.FC = () => {
       <Footer
         leftLinks={[
           { href: "#projects", label: "Projects" },
+          { href: "#build-together", label: "What We Build" },
           { href: "/web-design", label: "Web Design" },
           { href: "#about", label: "About" },
           { href: "#timeline", label: "Timeline" },
@@ -518,8 +459,9 @@ export const WebDesignPage: React.FC = () => {
           />
         </a>
 
-        <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
+        <div className="hidden max-w-2xl flex-wrap justify-end gap-x-6 gap-y-3 font-accent text-[15px] font-semibold tracking-[0.04em] md:flex">
           <a href="/#projects" className="hover:opacity-60 transition-opacity">Projects</a>
+          <a href="#build-together" className="hover:opacity-60 transition-opacity">What We Build</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
           <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
           <a href="/#timeline" className="hover:opacity-60 transition-opacity">Timeline</a>
@@ -558,10 +500,10 @@ export const WebDesignPage: React.FC = () => {
                 Start a Website ↗
               </a>
               <a
-                href="#packages"
+                href="#build-together"
                 className="font-accent border border-black px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.08em] transition-transform hover:-translate-y-1"
               >
-                View Options ↗
+                Explore What’s Possible ↗
               </a>
             </div>
           </Reveal>
@@ -581,6 +523,8 @@ export const WebDesignPage: React.FC = () => {
             </div>
           </Reveal>
         </section>
+
+        <BuildTogetherSection />
 
         <section id="packages" className="relative z-10 px-6 py-24 md:px-12">
           <Reveal>
@@ -655,6 +599,7 @@ export const WebDesignPage: React.FC = () => {
       <Footer
         leftLinks={[
           { href: "/#projects", label: "Projects" },
+          { href: "#build-together", label: "What We Build" },
           { href: "/web-design", label: "Web Design" },
           { href: "/#about", label: "About" },
           { href: "/#timeline", label: "Timeline" },
