@@ -15,7 +15,7 @@ export default {
           "Arial",
           "sans-serif",
         ],
-        accent: ['"Bitcount Prop Single"', "monospace"],
+        accent: ['"Pinyon Script"', "cursive"],
         script: ['"Pinyon Script"', "cursive"],
       },
     },
