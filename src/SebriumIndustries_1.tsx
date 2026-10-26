@@ -185,6 +185,14 @@ const PROJECTS = [
     desc: "Professional websites, landing pages, and redesigns for businesses.",
     cta: "View Service ↗",
   },
+  {
+    id: "04",
+    name: "Crusader Kitchen",
+    logo: "/project-logos/crusader-kitchen.png",
+    href: "https://www.crusaderkitchen.com/",
+    desc: "Fresh weekly meal prep with online ordering for high-protein meals.",
+    cta: "View Project ↗",
+  },
 ];
 
 const TIMELINE = [
@@ -266,7 +274,7 @@ const SebriumIndustries: React.FC = () => {
     <div className="relative isolate bg-white text-black font-sans antialiased overflow-x-hidden">
       <BackgroundPaths />
       {/* NAV */}
-      <nav className="relative z-10 flex items-center justify-end px-6 md:px-12 py-6 md:min-h-[88px]">
+      <nav className="relative z-10 flex items-center justify-center px-6 md:px-12 py-6 md:min-h-[88px]">
         <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
           <a href="#projects" className="hover:opacity-60 transition-opacity">Projects</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
@@ -364,7 +372,7 @@ const SebriumIndustries: React.FC = () => {
           Projects
         </h2>
 
-        <div className="grid items-stretch gap-7 md:grid-cols-3">
+        <div className="grid items-stretch gap-7 md:grid-cols-2">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.id} delay={i * 120} className="h-full">
               <div className="group flex h-full min-h-[320px] flex-col items-center justify-between border border-black bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
