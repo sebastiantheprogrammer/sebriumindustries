@@ -266,15 +266,7 @@ const SebriumIndustries: React.FC = () => {
     <div className="relative isolate bg-white text-black font-sans antialiased overflow-x-hidden">
       <BackgroundPaths />
       {/* NAV */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
-        <div className="flex items-center gap-3">
-          <img
-            src="/SIsebriumindustries.svg"
-            alt="Sebrium"
-            className="hidden h-10 w-auto md:block"
-          />
-        </div>
-
+      <nav className="relative z-10 flex items-center justify-end px-6 md:px-12 py-6 md:min-h-[88px]">
         <div className="hidden md:flex gap-9 font-accent text-[15px] font-semibold tracking-[0.04em]">
           <a href="#projects" className="hover:opacity-60 transition-opacity">Projects</a>
           <a href="/web-design" className="hover:opacity-60 transition-opacity">Web Design</a>
