@@ -180,7 +180,7 @@ const PROJECTS = [
   {
     id: "03",
     name: "Sebrium Web Development",
-    logo: "/project-logos/sebrium-web-development.svg",
+    logo: null,
     href: "/web-design",
     desc: "Professional websites, landing pages, and redesigns for businesses.",
     cta: "View Service ↗",
@@ -378,11 +378,16 @@ const SebriumIndustries: React.FC = () => {
               <div className="group flex h-full min-h-[320px] flex-col items-center justify-between border border-black bg-white p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-black hover:text-white">
                 <div className="flex w-full flex-1 flex-col items-center justify-center">
                   <div className="flex h-16 w-full items-center justify-center">
-                  <img
+                  {p.logo ? <img
                     src={p.logo}
                     alt={p.name}
-                    className="h-10 w-auto max-w-[180px] object-contain transition duration-300 group-hover:invert sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px]"
-                  />
+                    className={`h-10 w-auto max-w-[180px] object-contain transition duration-300 sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px] ${p.name === "Crusader Kitchen" ? "" : "group-hover:invert"}`}
+                  /> : (
+                    <div aria-label={p.name} className="flex flex-col items-center gap-1">
+                      <span className="font-script text-5xl leading-none">Sebrium</span>
+                      <span className="font-accent text-[13px] font-semibold tracking-[0.08em]">Web Development</span>
+                    </div>
+                  )}
                   </div>
                   <p className="mt-7 max-w-[260px] leading-relaxed">{p.desc}</p>
                 </div>
