@@ -384,7 +384,7 @@ const SebriumIndustries: React.FC = () => {
                     className={`h-10 w-auto max-w-[180px] object-contain transition duration-300 sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px] ${p.name === "Crusader Kitchen" ? "" : "group-hover:invert"}`}
                   /> : (
                     <div aria-label={p.name} className="flex flex-col items-center gap-1">
-                      <span className="font-sans text-4xl font-black tracking-tight leading-none">Sebrium</span>
+                      <span className="font-sans text-4xl font-medium tracking-tight leading-none">Sebrium</span>
                       <span className="font-accent text-[13px] font-semibold tracking-[0.08em]">Web Development</span>
                     </div>
                   )}
@@ -507,7 +507,9 @@ const SebriumIndustries: React.FC = () => {
 
 export const WebDesignPage: React.FC = () => {
   useEffect(() => {
-    document.title = "Sebrium Web Design | Websites for Businesses";
+    const previousTitle = document.title;
+    document.title = "Web Development | Sebrium";
+    return () => { document.title = previousTitle; };
   }, []);
 
   return (
@@ -546,7 +548,7 @@ export const WebDesignPage: React.FC = () => {
             </div>
             <BlurText
               as="h1"
-              text="Professional websites built with a product mindset."
+              text="Still need a website?"
               className="text-5xl font-medium leading-[0.96] tracking-[-0.05em] md:text-8xl"
             />
             <p className="mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
