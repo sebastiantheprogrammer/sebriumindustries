@@ -179,8 +179,8 @@ const PROJECTS = [
   },
   {
     id: "03",
-    name: "Sebrium Web Design",
-    logo: "/SIsebriumindustries.svg",
+    name: "Sebrium Web Development",
+    logo: "/project-logos/sebrium-web-development.svg",
     href: "/web-design",
     desc: "Professional websites, landing pages, and redesigns for businesses.",
     cta: "View Service ↗",

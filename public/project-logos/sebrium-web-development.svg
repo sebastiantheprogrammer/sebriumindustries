@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="150" viewBox="0 0 560 150" role="img" aria-labelledby="title">
+  <title id="title">Sebrium Web Development</title>
+  <g fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="26" width="100" height="98" rx="18"/>
+    <path d="m40 61-15 14 15 14m38-28 15 14-15 14M66 53 52 97"/>
+  </g>
+  <text x="135" y="89" fill="#000" font-family="Georgia, 'Times New Roman', serif" font-size="79" font-style="italic" font-weight="700" letter-spacing="-3">Sebrium</text>
+  <text x="143" y="122" fill="#000" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600" letter-spacing="4">WEB DEVELOPMENT</text>
+</svg>
