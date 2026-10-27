@@ -384,7 +384,7 @@ const SebriumIndustries: React.FC = () => {
                     className={`h-10 w-auto max-w-[180px] object-contain transition duration-300 sm:h-12 sm:max-w-[220px] md:h-14 md:max-w-[230px] ${p.name === "Crusader Kitchen" ? "" : "group-hover:invert"}`}
                   /> : (
                     <div aria-label={p.name} className="flex flex-col items-center gap-1">
-                      <span className="font-script text-5xl leading-none">Sebrium</span>
+                      <span className="font-sans text-4xl font-black tracking-tight leading-none">Sebrium</span>
                       <span className="font-accent text-[13px] font-semibold tracking-[0.08em]">Web Development</span>
                     </div>
                   )}
